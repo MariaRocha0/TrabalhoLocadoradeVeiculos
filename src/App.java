@@ -1,5 +1,6 @@
 import Arquivos.Arquivo;
 import Classes.Categoria;
+import Classes.Cliente;
 import Classes.Veiculo;
 import Listas.ListaCategoria;
 import Listas.ListaCliente;
@@ -11,6 +12,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         final String fileCategoria = "src\\Arquivos\\Categorias.csv";
         final String fileVeiculo = "src\\Arquivos\\Veiculos.csv";
+        final String fileCliente = "src\\Arquivos\\Clientes.csv";
+
 
         Arquivo read = new Arquivo(fileCategoria);
 
@@ -113,6 +116,61 @@ public class App {
                     lv.addFim(veiculo);
                 } catch (Exception e) {
                     System.out.println("Erro ao adicionar categoria: " + e.getMessage());
+                }
+
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        /**
+         * passar CSV cliente
+         */
+        read.setFilePath(fileCliente);
+
+        try {
+            read.read();
+            String content = read.getContent();
+            String[] contentBreak = content.split("\n");
+
+            for(int i = 1; i < contentBreak.length; i++) {
+
+                String[] contentData = contentBreak[i].split(";");
+                String nome = contentData[0];
+                String telefone = contentData[1];
+                String cnh = contentData[2];
+                String cpf = contentData[3];
+
+                long telefoneL = 0;
+                long cnhL = 0;
+                long cpfL = 0;
+
+                try {
+                    telefoneL = Long.parseLong(telefone);
+                } catch (Exception e) {
+                    System.out.println("Erro ao passar telefone: " + e.getMessage());
+              }
+
+                try {
+                    cnhL = Long.parseLong(cnh);
+                } catch (Exception e) {
+                    System.out.println("Erro ao passar CNH: " + e.getMessage());
+                }
+
+                try {
+                    cpfL = Long.parseLong(cpf);
+                } catch (Exception e) {
+                    System.out.println("Erro ao passar CPF: " + e.getMessage());
+                }
+
+                Cliente cliente = new Cliente(nome, telefoneL, cnhL, cpfL);  
+
+                try {
+                    lc.addFim(cliente);
+                } catch (Exception e) {
+                    System.out.println("Erro ao adicionar cliente: " + e.getMessage());
                 }
 
             }

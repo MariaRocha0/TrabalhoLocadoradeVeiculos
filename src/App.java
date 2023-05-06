@@ -181,5 +181,7 @@ public class App {
 
         Menu menu = new Menu(lc, lv, ll, lca);
         menu.show();
+
+        
     }
 }

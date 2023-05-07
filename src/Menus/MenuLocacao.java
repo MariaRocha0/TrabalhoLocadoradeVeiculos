@@ -24,7 +24,7 @@ public class MenuLocacao {
         entrada = new Scanner(System.in);
     }
 
-    public void show() {
+    public void show() throws Exception {
         int op;
         do {
 
@@ -67,8 +67,9 @@ public class MenuLocacao {
     /**
      * Método para adicionar uma locação
      * Atributos obrigátorios: CPF e placa de veículo
+     * @throws Exception
      */
-    private void addLocacao() {
+    private void addLocacao() throws Exception {
 
         Calendar dataI = Calendar.getInstance();
         Calendar dataF = Calendar.getInstance();

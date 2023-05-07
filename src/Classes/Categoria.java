@@ -32,7 +32,7 @@ public class Categoria {
 
     @Override
     public String toString() {
-        return "Categoria [nome=" + nome + ", identificador=" + identificador + "]";
+        return "Categoria [nome=" + nome + ", identificador=" + identificador + "]\n";
     }
 
 }

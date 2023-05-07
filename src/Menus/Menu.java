@@ -35,7 +35,7 @@ public class Menu {
 
   }
 
-  public void show() {
+  public void show() throws Exception {
     do {
       System.out.println("-------------------------------");
       System.out.println("MENU PRINCIPAL");

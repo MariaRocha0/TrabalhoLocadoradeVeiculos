@@ -76,7 +76,7 @@ public class Veiculo {
     @Override
     public String toString() {
         return "Veiculo [placa=" + placa + ", modelo=" + modelo + ", marca=" + marca + ", ano=" + ano + ", potencia="
-                + potencia + ", nlugares=" + nlugares + ", categoria=" + categoria.getNome() + "]";
+                + potencia + ", nlugares=" + nlugares + ", categoria=" + categoria.getNome() + "] \n";
     }
 
 }

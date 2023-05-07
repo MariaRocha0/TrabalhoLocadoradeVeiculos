@@ -2,7 +2,7 @@ package Listas;
 
 import Interfaces.ILista;
 
-public class LDE implements ILista{
+public class LDE implements ILista {
 
     private Noh inicio;
     private Noh fim;

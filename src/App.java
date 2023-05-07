@@ -151,7 +151,7 @@ public class App {
                     telefoneL = Long.parseLong(telefone);
                 } catch (Exception e) {
                     System.out.println("Erro ao passar telefone: " + e.getMessage());
-              }
+                }
 
                 try {
                     cnhL = Long.parseLong(cnh);

@@ -37,8 +37,9 @@ public class ListaCliente {
      * 
      * @param cpf
      * @return
+     * @throws Exception
      */
-    public Cliente getCliente(long cpf) {
+    public Cliente getCliente(long cpf) throws Exception {
         if (lista.getInicio() != null) {
             Cliente c = (Cliente) lista.getInicio().getInfo();
             if (c.getCpf() == cpf) {
@@ -53,7 +54,7 @@ public class ListaCliente {
                 }
             }
         }
-        return null;
+        throw new Exception("Cliente não encontrado");
     }
 
     /**
@@ -61,8 +62,9 @@ public class ListaCliente {
      * 
      * @param CPF
      * @return
+     * @throws Exception
      */
-    public String getInfo(long CPF) {
+    public String getInfo(long CPF) throws Exception {
         if (getCliente(CPF) != null) {
             return getCliente(CPF).toString();
         }
@@ -92,10 +94,14 @@ public class ListaCliente {
      * 
      * @param CPF
      * @return
+     * @throws Exception
      */
-    public boolean remove(long CPF) {
-        if (listaL.existeCNH(getCliente(CPF).getCnh())) {
-            return false;
+    public boolean remove(long CPF) throws Exception {
+        if(listaL == null){
+            lista.remove(getCliente(CPF));
+            return true;
+        }else if (listaL.existeCNH(getCliente(CPF).getCnh()) == false) {
+            throw new Exception("Cliente possui locação ativa!");
         } else {
             return lista.remove(getCliente(CPF));
         }
@@ -106,8 +112,9 @@ public class ListaCliente {
      * 
      * @param CPF
      * @return
+     * @throws Exception
      */
-    public boolean existe(long CPF) {
+    public boolean existe(long CPF) throws Exception {
         if (getCliente(CPF) != null) {
             return true;
         }

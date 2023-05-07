@@ -61,7 +61,7 @@ public class Locacao {
     public String toString() {
         return "Locacao [cnh=" + cnh.getCnh() + ", placa=" + placa.getPlaca() + ", data inicial= " +  datainicio.get(Calendar.DAY_OF_MONTH) + "/" + (datainicio.get(Calendar.MONTH) + 1) + "/" + datainicio.get(Calendar.YEAR) +
         "; data final: " + datafinal.get(Calendar.DAY_OF_MONTH) + "/" + (datafinal.get(Calendar.MONTH) + 1) + "/" + datafinal.get(Calendar.YEAR) +
-        ", valor=" + valor + "]";
+        ", valor=" + valor + "]\n";
     }
 
 }
